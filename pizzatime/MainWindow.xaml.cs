@@ -19,6 +19,8 @@ namespace pizzatime
         List<string> kinálat = new List<string>() { "Margherita", "Sonkás", "Gombás", "Hawaii", "Négy sajtos", "Magyaros" };
         List<string> rendelés = new List<string>() { };
 
+        List<string> keres = new List<string>() { };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -110,6 +112,31 @@ namespace pizzatime
                 Tblk_Rendszám.Text = "Rendelések száma: " + rendelés.Count.ToString();
 
             }
+        }
+
+        private void Keres(object sender, RoutedEventArgs e)
+        {
+            if (rendelés.Contains(Tb_keres.Text.ToLower().Trim()))
+            {
+                MessageBox.Show($"A(z) {Tb_keres.Text.ToLower().Trim()} pizza {Keresőcucc()} szor van a rendelésben", "Figyelem", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+        }
+
+        private int Keresőcucc()
+            {
+            keres = new List<string>();
+            string keresendő = Tb_keres.Text.ToLower().Trim();
+
+            foreach (var item in rendelés)
+            {
+                if (item.ToLower().Trim() == keresendő)
+                {
+                    keres.Add(item);
+                }
+            }
+
+            return keres.Count;
         }
     }
 }

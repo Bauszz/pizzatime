@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pizzatime"
         mc:Ignorable="d"
-        Title="Pizza" Height="300" Width="600">
+        Title="Pizza" Height="300" Width="600" ResizeMode="NoResize" Background="#FFBBB39A">
     <Grid>
-        <ListBox x:Name="Lb_pizza" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" Margin="0,-1,485,1" RenderTransformOrigin="0.5,0.5" SelectionChanged="Kivalasztas">
+        <ListBox x:Name="Lb_pizza" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" Margin="0,-1,485,1" RenderTransformOrigin="0.5,0.5" SelectionChanged="Kivalasztas" Background="#FFBBB39A">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,16 +17,25 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <TextBox x:Name="Tb_adás" HorizontalAlignment="Left" Margin="120,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Btn_adás" Content="Hozzáadás" HorizontalAlignment="Left" Margin="120,52,0,0" VerticalAlignment="Top" Click="Adás"/>
-        <Button x:Name="Btn_törlés" Content="Törlés" HorizontalAlignment="Left" Margin="205,52,0,0" VerticalAlignment="Top" Click="törlés"/>
-        <TextBox x:Name="Tb_méret" HorizontalAlignment="Left" Margin="214,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="49"/>
-        <Button x:Name="Btn_rendelés" Content="Rendelés" HorizontalAlignment="Left" Margin="180,195,0,0" VerticalAlignment="Top" Click="Rendelés"/>
-        <TextBlock x:Name="Tblk_Kiválasztott" HorizontalAlignment="Left" Margin="131,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="78"/>
-        <ListBox x:Name="Lb_Checkout" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="315,0,136,0"/>
-        <TextBlock x:Name="Tblk_Rendszám" Margin="464,205,6,0" TextWrapping="Wrap" Text="Rendelések száma:" VerticalAlignment="Top" Height="79"/>
-        <Button x:Name="Btn_ChckTörlSel" Content="Kijelölt Törlés" HorizontalAlignment="Left" Margin="470,40,0,0" VerticalAlignment="Top" Click="SelDelCheck"/>
-        <Button x:Name="Btn_ChckTörlAll" Content="Minden Törlés" HorizontalAlignment="Left" Margin="470,70,0,0" VerticalAlignment="Top" Click="AllDelCheck"/>
+        <TextBox x:Name="Tb_adás" HorizontalAlignment="Left" Margin="128,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFED9090" Height="29"/>
+        <Button x:Name="Btn_adás" Content="Hozzáadás" HorizontalAlignment="Left" Margin="120,52,0,0" VerticalAlignment="Top" Click="Adás" Background="#FFE4D075" />
+        <Button x:Name="Btn_törlés" Content="Törlés" HorizontalAlignment="Left" Margin="205,52,0,0" VerticalAlignment="Top" Click="törlés" Background="#FF797567"/>
+        <TextBox x:Name="Tb_méret" HorizontalAlignment="Left" Margin="222,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.926,0.936" Background="#FFB9A047"/>
+        <Button x:Name="Btn_rendelés" Content="Rendelés" HorizontalAlignment="Left" Margin="154,185,0,0" VerticalAlignment="Top" Click="Rendelés" Background="#FF797567"/>
+        <TextBlock x:Name="Tblk_Kiválasztott" HorizontalAlignment="Left" Margin="128,237,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="78" Background="#FFED9090"/>
+        <ListBox x:Name="Lb_Checkout" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="492,0,0,0">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.0,0" StartPoint="1.0,0">
+                    <GradientStop Color="#FF443924"/>
+                    <GradientStop Color="#FFB99B6E" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <TextBlock x:Name="Tblk_Rendszám" Margin="263,18,263,0" TextWrapping="Wrap" Text="Rendelések száma:" VerticalAlignment="Top" Height="79" Background="#FFA53F3F"/>
+        <Button x:Name="Btn_ChckTörlSel" Content="Kijelölt Törlés" HorizontalAlignment="Left" Margin="383,37,0,0" VerticalAlignment="Top" Click="SelDelCheck" Background="#FF797567"/>
+        <Button x:Name="Btn_ChckTörlAll" Content="Minden Törlés" HorizontalAlignment="Left" Margin="398,209,0,0" VerticalAlignment="Top" Click="AllDelCheck" Background="#FFB9A047"/>
+        <TextBox x:Name="Tb_keres" HorizontalAlignment="Left" Margin="390,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="76" Background="#FFED9090"/>
+        <Button x:Name="Btn_keres" Content="Keresés" HorizontalAlignment="Left" Margin="437,142,0,0" VerticalAlignment="Top" Click="Keres" Background="#FF797567"/>
 
 
     </Grid>
